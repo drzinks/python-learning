@@ -1,13 +1,14 @@
 class User:
-    name = ""
+    id = 0
     age = 0
 
     def __init__(self, name, age):
-        self.name = name
+        User.id += 1
+        self.name = name #zmienna klasowa
         self.age = age
 
 
 
 michal = User("Michał", 42)
-print(str(michal))
+print(User.name)
 

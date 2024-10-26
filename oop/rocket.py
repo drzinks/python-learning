@@ -16,6 +16,7 @@ class Rocket:
     def __str__(self):
         return "Rocket is on altitude " + str(self.altitude) + " m."
 
+
 from random import randint
 class RocketBoard:
     def __init__(self, amount_of_rockets=5):
@@ -27,3 +28,13 @@ class RocketBoard:
 
         for rocket in self.rockets:
             print(rocket)
+
+    def __getitem__(self, key):
+        return self.rockets[key]
+
+    def __setitem__(self, key, value):
+        self.rockets[key].altitude = value
+
+    @staticmethod
+    def get_distance(rocket1: Rocket,rocket2: Rocket) -> int:
+        return abs(rocket1.altitude - rocket2.altitude)
